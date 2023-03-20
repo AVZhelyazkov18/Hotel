@@ -1,18 +1,20 @@
+import Enums.JobType;
+
 public class Worker extends Guest {
-    private String job;
+    private JobType job;
     private float salary;
 
     public Worker(String userFName, String userLName, String age, String pin, String job, float salary) {
         super(userFName, userLName, age, pin);
-        this.job = job;
+        this.job = JobType.valueOf(job);
         this.salary = salary;
     }
 
-    public String getJob() {
+    public JobType getJob() {
         return job;
     }
 
-    public void setJob(String job) {
+    public void setJob(JobType job) {
         this.job = job;
     }
 

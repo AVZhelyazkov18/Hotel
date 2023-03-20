@@ -23,5 +23,20 @@ public class Hotel {
         }
     }
 
+    public int getAnAvailableRoom() {
+        for (int i = 0; i < hotelRooms.size(); i++) {
+            if (hotelRooms.get(i).getAssignedGuests().size() <= 0) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
+    public String getHotelName() {
+        return hotelName;
+    }
+
+    public List<Room> getHotelRooms() {
+        return hotelRooms;
+    }
 }
