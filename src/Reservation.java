@@ -2,17 +2,18 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class Reservation {
-    private static Hotel hotel;
+    public static Hotel hotel;
 
     private LocalDate reservationDateBegin;
     private LocalDate reservationDateEnd;
 
     private int reservedRoom;
 
-    private List<Guest> reservedFor;
+    private List<Guest> reservedForGuests;
+
 
     public void occupyRoom() {
-        hotel.getHotelRooms().get(reservedRoom).setAssignedGuests(this.reservedFor);
+        hotel.getHotelRooms().get(reservedRoom).setAssignedGuests(this.reservedForGuests);
     }
 
     public void clearRoom() {
@@ -27,7 +28,7 @@ public class Reservation {
         this.reservationDateBegin = reservationDateBegin;
         this.reservationDateEnd = reservationDateEnd;
         this.reservedRoom = reservedRoom;
-        this.reservedFor = reservedFor;
+        this.reservedForGuests = reservedFor;
     }
 
     public LocalDate getReservationDateBegin() {
@@ -55,10 +56,10 @@ public class Reservation {
     }
 
     public List<Guest> getReservedFor() {
-        return reservedFor;
+        return reservedForGuests;
     }
 
     public void setReservedFor(List<Guest> reservedFor) {
-        this.reservedFor = reservedFor;
+        this.reservedForGuests = reservedFor;
     }
 }
